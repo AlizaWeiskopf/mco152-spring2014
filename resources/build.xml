@@ -1,0 +1,17 @@
+<project default="dist-src">
+
+	<target name="dist-src">
+        <!--<delete file = "weiskopf.zip"/> -->
+		<zip file="weiskopf.zip">
+			<fileset dir="src">
+				<include name="**/*" />
+			</fileset>
+			<fileset dir="test">
+				<include name="**/*" />
+			</fileset>
+		</zip>
+
+	</target>
+
+
+</project>

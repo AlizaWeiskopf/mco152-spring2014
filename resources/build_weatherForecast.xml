@@ -1,0 +1,19 @@
+<project name = "antsimple" default = "dist-src" basedir=".">
+
+	<target name="dist-src" description="generate the distribution">
+		<jar jarfile = "WeiskopfWeatherForecast.jar">
+		<zipgroupfileset dir = "libs" includes="**/*.jar"/>
+			<manifest>
+				<attribute name ="Main-Class"
+				value="weiskopf.weather.GUIDriver"/>
+			</manifest>
+			<fileset dir="./bin">
+				<include name = "weiskopf/weather/*.class"/>
+				<include name = "weiskopf/weather/*.txt"/>
+				</fileset>
+		</jar>
+
+	</target>
+
+
+</project>

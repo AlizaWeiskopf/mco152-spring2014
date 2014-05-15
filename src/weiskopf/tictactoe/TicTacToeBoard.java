@@ -1,7 +1,5 @@
 package weiskopf.tictactoe;
 
-
-
 public class TicTacToeBoard {
 
 	private Symbol[][] board;

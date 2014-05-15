@@ -1,6 +1,5 @@
 package weiskopf.tictactoe;
 
-
 public class Location {
 
 	private int x;
