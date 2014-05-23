@@ -1,6 +1,5 @@
 package weiskopf.earthquakes;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
 
@@ -15,7 +14,6 @@ public class EarthquakeFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		list = new JList();
-		list.setModel(new DefaultListModel());
 		list.setCellRenderer(new CellColorRenderer());
 		this.add(list);
 

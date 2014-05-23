@@ -1,0 +1,19 @@
+<project name = "antsimple" default = "dist-src" basedir=".">
+
+	<target name="dist-src" description="generate the distribution">
+		<jar jarfile = "WeiskopfEarthquake.jar">
+		<zipgroupfileset dir = "libs" includes="**/*.jar"/>
+			<manifest>
+				<attribute name ="Main-Class"
+				value="weiskopf.earthquakes.ShowEarthquakes"/>
+			</manifest>
+			<fileset dir="./bin">
+				<include name = "weiskopf/earthquakes/*.class"/>
+				<include name = "weiskopf/earthquakes/*.txt"/>
+				</fileset>
+		</jar>
+
+	</target>
+
+
+</project>

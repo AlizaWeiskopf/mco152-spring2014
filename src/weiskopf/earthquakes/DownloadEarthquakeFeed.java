@@ -29,7 +29,6 @@ public class DownloadEarthquakeFeed extends Thread {
 		URL url;
 		try {
 			while (true) {
-				sleep(1000);
 
 				url = new URL(
 						"http://earthquake-report.com/feeds/recent-eq?json");
@@ -40,9 +39,20 @@ public class DownloadEarthquakeFeed extends Thread {
 						new InputStreamReader(in));
 				Gson gson = new Gson();
 				Earthquakes data = gson.fromJson(reader, Earthquakes.class);
-				list.setModel(new DefaultListModel());
+				DefaultListModel model = new DefaultListModel();
+				list.setModel(model);
+				for (Earthquake e : data) {
+					model.addElement(data);
+				}
 
+				try {
+					sleep(3600000);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				frame.repaint();
+
 			}
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -50,11 +60,8 @@ public class DownloadEarthquakeFeed extends Thread {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
+		}
 	}
 
 }
