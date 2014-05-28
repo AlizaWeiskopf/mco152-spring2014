@@ -16,8 +16,8 @@ public class CellColorRenderer extends DefaultListCellRenderer {
 		Component c = super.getListCellRendererComponent(list, value, index,
 				isSelected, cellHasFocus);
 
-		Earthquakes e = (Earthquakes) value;
-		double magnitude = Double.valueOf(e.get(index).getMagnitude());
+		Earthquake e = (Earthquake) value;
+		double magnitude = Double.valueOf(e.getMagnitude());
 		if (magnitude < 2) {
 			c.setBackground(Color.MAGENTA);
 		} else {
@@ -35,6 +35,7 @@ public class CellColorRenderer extends DefaultListCellRenderer {
 						} else {
 							c.setBackground(Color.RED);
 						}
+
 					}
 				}
 			}

@@ -1,7 +1,7 @@
 <project name = "antsimple" default = "dist-src" basedir=".">
 
 	<target name="dist-src" description="generate the distribution">
-		<jar jarfile = "WeiskopfEarthquake.jar">
+		<jar jarfile = "WeiskopfEarthquakes.jar">
 		<zipgroupfileset dir = "libs" includes="**/*.jar"/>
 			<manifest>
 				<attribute name ="Main-Class"
